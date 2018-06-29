@@ -1,0 +1,6 @@
+dist/
+node_modules/
+test/integration/screenshots-current
+yarn.lock
+.DS_Store
+package-lock.json
