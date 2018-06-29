@@ -134,7 +134,7 @@ const shared = env => {
       overlay: {
         errors: true
       },
-      port: 6060,
+      port: 5050,
       host: '0.0.0.0',
       disableHostCheck: true,
       historyApiFallback: true,

@@ -27,36 +27,7 @@ export const navigate = (path) => (dispatch) => {
   dispatch(updateDrawerState(false));
 };
 
-const loadPage = (page) => async (dispatch) => {
-  switch(page) {
-    case 'home':
-      await import('../components/my-home');
-      // Put code here that you want it to run every time when
-      // navigate to view1 page and my-view1 is loaded
-      break;
-    case 'view2':
-      await import('../components/my-view2');
-      break;
-    case 'produs':
-      await import('../components/main-produs');
-      break;
-    case 'autor':
-      await import('../components/main-autor');
-      break;
-      case 'view3':
-      await import('../components/my-view3');
-      break;
-    case 'termeni-si-conditii':
-      await import('../components/main-termeni-si-conditii');
-      break;
-    default:
-      page = 'view404';
-      await import('../components/my-view404');
-  }
 
-  dispatch(updatePage(page));
-  
-}
 
 const updatePage = (page) => {
   return {

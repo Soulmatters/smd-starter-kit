@@ -14,7 +14,7 @@ import  SharedStyles  from '../shared-style.styl';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 // This element is connected to the redux store.
 import { store } from '../../store.js';
-import '../lit-test';
+import '../test-lit';
 import template from './template.html'
 import '../test-element';
 // These are the actions needed by this element.

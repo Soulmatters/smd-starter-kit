@@ -15,11 +15,9 @@ import '@polymer/app-layout/app-header/app-header.js';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
-import firebase from 'firebase/app'
 import { menuIcon } from './my-icons.js';
 import './snack-bar.js';
 import '@polymer/iron-pages/iron-pages.js';
-import './user-box'
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { installRouter } from 'pwa-helpers/router.js';
 import { installOfflineWatcher } from 'pwa-helpers/network.js';
@@ -29,8 +27,6 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/app-route/app-location.js';
 import { store } from '../store.js';
 import { navigate, updateOffline, updateDrawerState, updateLayout, setProductId } from '../actions/app.js';
-import './cart-element'
-import uniqid from 'uniqid';
 class MyApp extends connect(store)(PolymerElement) {
   static get template() {
     // Anything that's related to rendering should be done in here.
@@ -316,12 +312,8 @@ footer a{
     </app-drawer>
     <!-- Main content -->
     <iron-pages class="main-content" selected="[[page]]" class="menu" attr-for-selected="nume">
-      <my-home nume="acasa" ></my-home>
-      <main-produs nume="produs" slug="{{produsData.slug}}" ></main-produs>
-      <main-autor nume="autor" autor="{{autorData.name}}" ></main-autor>
-      <main-login nume="login" ></main-login>
-      <main-tag nume="tag" tag="{{tagData.name}}" ></main-tag>
-      <main-termeni-si-conditii nume="termeni-si-conditii" ></main-termeni-si-conditii>
+      <my-home nume="acasa"></my-home>
+      <my-view404 nume="view404"></my-view404>
     </iron-pages>
 
     <footer>
@@ -382,7 +374,9 @@ _pageChanged(page, old){
       case 'acasa':
           return import('./my-home')
           break;
-      
+      case 'view404':
+          return import('./my-view404')
+          break;
   }
 }
   constructor() {
