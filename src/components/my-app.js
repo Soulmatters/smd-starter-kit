@@ -319,7 +319,6 @@ footer a{
     <footer>
     <div class="wrapper">
       <div>Soulmatters © 2018</div>
-      <div> <a href="/termeni-si-conditii">Termeni și condiții</a> </div>
     </div>
     </footer>
     <paper-toast  id="toast" text="Bun venit!"></paper-toast>
